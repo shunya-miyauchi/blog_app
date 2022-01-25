@@ -1,0 +1,11 @@
+<h2>以下の内容で送信する。</h2>
+
+<%= form_with(model:@blog , local:true, url: blogs_path ) do |form| %>
+    <%= form.hidden_field :title %>
+    <%= form.hidden_field :content %>
+
+    <p>タイトル: <%= @blog.title %></p>
+    <p>本文: <%= @blog.content %></p>
+    <%= form.submit "登録" %>
+    <%= form.submit "戻る" , name:"back" %>
+<% end %>
